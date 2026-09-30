@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="60dp"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="28dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_marginEnd="14dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <ImageView
+                    android:id="@+id/airtelIotLogo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/airtel_iot_logo"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:contentDescription="Airtel IoT Logo" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="Airtel PP Connector"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:ellipsize="none" />
+
+        </LinearLayout>
+
+        <!-- ==========================================
+             POSITION SOURCE
+             ========================================== -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Position Source"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/positionSourceSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="USB GNSS Device"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/deviceSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="18dp" />
+
+        <Button
+            android:id="@+id/connectButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connect"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/comparePositionsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Compare Positions"
+            android:layout_marginBottom="20dp"
+            android:enabled="false" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Waiting for GNSS receiver..."
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NTRIP Corrections"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/ntripStatusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔴 NTRIP Disabled"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/ntripButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable NTRIP"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mock Location"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/mockLocationStatusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔴 Mock Location OFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/mockLocationButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Setup Mock Location"
+            android:layout_marginBottom="24dp" />
+
+        <!-- ==========================================
+             ANDROID LOCATION
+             ========================================== -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android Location"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/androidLocationText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android Location: ⚪ OFF"
+            android:textSize="15sp"
+            android:lineSpacingExtra="6dp"
+            android:paddingBottom="20dp" />
+
+        <!-- ==========================================
+             GNSS DATA
+             ========================================== -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GNSS Data"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/gnssText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Waiting for GNSS data..."
+            android:textSize="16sp"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone PDR / Manual Dead Reckoning"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/pdrText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone PDR: ⚪ STOPPED"
+            android:textSize="15sp"
+            android:lineSpacingExtra="6dp"
+            android:paddingBottom="14dp" />
+
+        <Button
+            android:id="@+id/startDrButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="START DR"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/stopDrButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STOP DR"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/resetDrButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RESET DR"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+
+</ScrollView>
